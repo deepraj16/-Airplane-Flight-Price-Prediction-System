@@ -34,7 +34,7 @@ def predict():
             additional_info=[form.additional_info.data]
         )) 
         prediction =model.predict(x_new)[0]
-        prediction+=1000
+        prediction-=1000
         message =f"The prediction value is {prediction} INR"
     else:
         message="please provid valid input details!!"
