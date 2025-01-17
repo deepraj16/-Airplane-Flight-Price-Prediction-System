@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin-top: 30px;
+            background-image: url('{{ url_for( "static", filename="images/backgrond.jpg" ) }}'); /* Use Jinja to link the image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; 
+            padding: 0;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #dfb725; /* Green background */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around; /* Center items evenly */
+        }
+
+        .navbar a {
+            color: white; /* White text color */
+            padding: 14px 20px; /* Spacing for links */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline */
+            font-size: 16px; /* Font size */
+        }
+
+        .navbar a:hover {
+            background-color: #45a049; /* Darker green on hover */
+            border-radius: 5px; /* Rounded corners on hover */
+        }
+
+        .flight-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+        }
+
+        .output {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .redirect {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .redirect a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .redirect a:hover {
+            text-decoration: underline;
+        }
+
+        /* General Page Styling */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f0f2f5;
+            color: #333;
+            border-radius: 8px;
+        }
+
+        /* Home Page Styling */
+        .home-page {
+            text-align: center;
+            padding: 40px 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a slight background for readability */
+            border-radius: 8px; /* Rounded corners */
+            margin: 0 auto;
+            max-width: 800px; /* Limit width for better readability */
+        }
+
+        .features, .about, .testimonials, .faq, .contact {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            color: #4CAF50; /* Matching the theme color */
+        }
+
+        blockquote {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #28a745;
+            background-color: #f9f9f9;
+            font-style: italic;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <h1>Flight Price Prediction</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('predict') }}">Predict Flight Price</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; Flight Prediction App by Deepraj Autade</p>
+    </footer>
+    
+</body>
+</html>

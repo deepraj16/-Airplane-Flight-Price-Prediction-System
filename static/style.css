@@ -1,0 +1,20 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('C:\Users\raj\Flask-ml-project\static\pexels-pixabay-104826.jpg'); /* Path to the background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Other styles... */
+
+.home-page {
+    text-align: center;
+    padding: 40px 20px; /* Adjust padding as needed */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency for readability */
+    border-radius: 8px; 
+    margin: 0 auto;
+    max-width: 800px;
+}

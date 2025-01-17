@@ -1,1 +1,1 @@
-git init# Flask Course - Project 
+# Flask Course - Project 
